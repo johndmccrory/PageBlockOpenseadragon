@@ -1,6 +1,6 @@
-# PageBlockIframe (module for Omeka-S)
+# PageBlockOpenseadragon (module for Omeka-S)
 
-This module provides an IFrame page block for Omeka-S.
+This module provides an Openseadragon hero page block for Omeka-S.
 
 ## Requirements
 
