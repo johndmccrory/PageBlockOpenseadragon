@@ -1,0 +1,87 @@
+.caption.asset-caption {
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 0.9rem;
+    margin: 0 1rem 0.5rem 0.5rem;
+    border-left: solid 6px #D3D3D3;
+}
+
+.caption.asset-caption p {
+    margin: 0;
+}
+
+.full-width {    
+    left: 50%;
+    position: relative;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+  }
+
+.grid-container {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    max-width: 71.25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.openseadragon-block {
+    height: 400px;
+}
+
+.openseadragon-block .hero-title-openseadragon {
+    position: absolute;
+    bottom: 30%;
+    max-width: 28rem;
+    z-index: 9999;
+    }
+    
+.openseadragon-block .hero-title-openseadragon h1 {
+    display: inline;  
+    background: #1d1d1d;
+    padding: 0.5rem;
+    color: #fff;
+    line-height: 2.75rem;
+}
+
+.dark-background {
+    background-color: #1d1d1d;
+    color: #fefefe;
+}
+
+.dark-background .caption.asset-caption {
+    border-left: solid 6px #D3D3D3;
+}
+
+@media screen and (min-width: 600px) {
+.openseadragon-block .hero-title-openseadragon h1 {
+    font-size: 200%;
+    line-height: 3rem;
+}
+}
+
+@media screen and (min-width: 900px) {
+.openseadragon-block {
+    height: 500px;
+}
+.large-padding-horizontal-1 {
+    padding: 0 1rem;
+}
+.openseadragon-block .hero-title-openseadragon {
+    bottom: 25%;
+}
+.openseadragon-block .hero-title-openseadragon h1 {
+    font-size: 230%;
+    line-height: 3.5rem;
+}
+}
+
+@media screen and (min-width: 1200px) {
+.openseadragon-block {
+    height: 550px;
+}
+.xlarge-padding-horizontal-2 {
+    padding: 0 2rem;
+}
+}

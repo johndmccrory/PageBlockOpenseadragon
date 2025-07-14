@@ -1,15 +1,15 @@
 <?php
-namespace PageBlockIframe;
+namespace OpenseadragonPageBlock;
 
 return [
     'block_layouts' => [
         'invokables' => [
-            'iFrame' => Site\BlockLayout\IFrame::class
+            'Openseadragon' => Site\BlockLayout\Openseadragon::class
         ],
     ],
     'form_elements' => [
         'invokables' => [
-            Form\IFrameFieldset::class => Form\IFrameFieldset::class,
+            Form\OpenseadragonFieldset::class => Form\OpenseadragonFieldset::class,
         ],
     ],
 ];
