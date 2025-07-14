@@ -4,47 +4,12 @@ namespace PageBlockOpenseadragon\Form;
 
 use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
-use Omeka\Form\Element as OmekaElement;
 
 class OpenseadragonFieldset extends Fieldset
 {
     public function init()
     {
         $this
-            ->add([
-                'name' => 'o:block[__blockIndex__][o:data][selector1]',
-                'type' => Element\Select::class,
-                'options' => [
-                    'label' => 'Overlay tint', // @translate
-                    'value_options' => [
-                        'dark' => 'Dark', // @translate
-                        'light' => 'Light', // @translate
-                        'medium' => 'Medium' // @translate
-                    ]
-                    ],
-            ])
-            ->add([
-                'name' => 'o:block[__blockIndex__][o:data][assetImage1]',
-                'type' => OmekaElement\Asset::class,
-                'options' => [
-                    'label' => 'Image 1', // @translate
-                ],
-                'attributes' => [
-                    'required' => true,
-                    'class' => 'asset-selector',
-                ],
-            ])
-            ->add([
-                'name' => 'o:block[__blockIndex__][o:data][assetImage2]',
-                'type' => OmekaElement\Asset::class,
-                'options' => [
-                    'label' => 'Image 2', // @translate
-                ],
-                'attributes' => [
-                    'required' => true,
-                    'class' => 'asset-selector',
-                ],
-            ])
             ->add([
                 'name' => 'o:block[__blockIndex__][o:data][tilesource]',
                 'type' => Element\Url::class,
