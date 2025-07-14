@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenseadragonPageBlock\Site\BlockLayout;
+namespace PageBlockOpenseadragon\Site\BlockLayout;
 
 use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Api\Representation\SitePageRepresentation;
@@ -26,7 +26,7 @@ class Openseadragon extends AbstractBlockLayout
         // Factory is not used to make rendering simpler.
         $services = $site->getServiceLocator();
         $formElementManager = $services->get('FormElementManager');
-        $blockFieldset = \OpenseadragonPageBlock\Form\OpenseadragonFieldset::class;
+        $blockFieldset = \PageBlockOpenseadragon\Form\OpenseadragonFieldset::class;
 
         // Set form values
         $data = $block ? $block->data() : [];

@@ -1,5 +1,6 @@
 <?php
-namespace OpenseadragonPageBlock\Form;
+
+namespace PageBlockOpenseadragon\Form;
 
 use Laminas\Form\Element;
 use Laminas\Form\Fieldset;

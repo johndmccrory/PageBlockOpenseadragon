@@ -1,7 +1,7 @@
 <?php
-$this->headScript()->appendFile($this->assetUrl('js/openseadragon-block.js', 'OpenseadragonPageBlock'));
+$this->headScript()->appendFile($this->assetUrl('js/openseadragon-block.js', 'PageBlockOpenseadragon'));
 $this->headScript()->appendFile('/omeka-s/application/asset/vendor/openseadragon/openseadragon.min.js');
-$this->headLink()->appendStylesheet($this->assetUrl('css/openseadragon.css', 'OpenseadragonPageBlock'));
+$this->headLink()->appendStylesheet($this->assetUrl('css/openseadragon.css', 'PageBlockOpenseadragon'));
 ?>
 
 <?php
@@ -13,15 +13,15 @@ $assetId2 = $data['assetImage2'] ?? null;
 $assetUrl1 = '';
 $assetUrl2 = '';
 
-    if ($assetId1) {
-        $asset1 = $this->api()->read('assets', $assetId1)->getContent();
-        $assetUrl1 = $asset1->assetUrl();
-    }
+if ($assetId1) {
+    $asset1 = $this->api()->read('assets', $assetId1)->getContent();
+    $assetUrl1 = $asset1->assetUrl();
+}
 
-    if ($assetId2) {
-        $asset2 = $this->api()->read('assets', $assetId2)->getContent();
-        $assetUrl2 = $asset2->assetUrl();
-    }
+if ($assetId2) {
+    $asset2 = $this->api()->read('assets', $assetId2)->getContent();
+    $assetUrl2 = $asset2->assetUrl();
+}
 $tilesource = $data['tilesource'] ?? '';
 $zoom1 = (float) ($data['zoom1'] ?? 1);
 $zoom2 = (float) ($data['zoom2'] ?? 1);
@@ -74,9 +74,9 @@ $blockId = 'viewer-' . $block->id();
 </div>
 
 <div>
-<?php if ($selector1): 
-    echo $this->escapeHtmlAttr($selector1); 
-    endif 
+<?php if ($selector1):
+    echo $this->escapeHtmlAttr($selector1);
+endif
 ?>
 </div>
 

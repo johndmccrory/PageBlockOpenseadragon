@@ -1,5 +1,6 @@
 <?php
-namespace OpenseadragonPageBlock;
+
+namespace PageBlockOpenseadragon;
 
 return [
     'block_layouts' => [
