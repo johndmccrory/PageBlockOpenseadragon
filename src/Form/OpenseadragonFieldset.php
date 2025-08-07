@@ -14,7 +14,7 @@ class OpenseadragonFieldset extends Fieldset
                 'name' => 'o:block[__blockIndex__][o:data][tilesource]',
                 'type' => Element\Url::class,
                 'options' => [
-                    'label' => 'IIIF Manifest Image location', // @translate
+                    'label' => 'IIIF Image location', // @translate
                     'info' => 'Paste a IIIF image location here, ensuring this address ends with /info.json', // @translate
                 ],
                 'attributes' => [
