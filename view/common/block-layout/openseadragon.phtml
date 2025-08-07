@@ -57,19 +57,3 @@ $blockId = 'viewer-' . $block->id();
         </div>
     <?php endif; ?>
 </div>
-
-<div>
-<?php if ($selector1):
-    echo $this->escapeHtmlAttr($selector1);
-endif
-?>
-</div>
-
-<?php if ($assetUrl1): ?>
-    <img src="<?= $this->escapeHtmlAttr($assetUrl1) ?>" alt="Image 1">
-<?php endif; ?>
-
-<?php if ($assetUrl2): ?>
-    <img src="<?= $this->escapeHtmlAttr($assetUrl2) ?>" alt="Image 2">
-<?php endif; ?>
-
