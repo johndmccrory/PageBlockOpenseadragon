@@ -11,6 +11,19 @@ class OpenseadragonFieldset extends Fieldset
     {
         $this
             ->add([
+                'name' => 'o:block[__blockIndex__][o:data][template]',
+                'type' => Element\Select::class,
+                'options' => [
+                    'label' => 'Template', // @translate
+                    'info' => 'Choose between a full-width image (default) and image alongside title/text.', // @translate
+                    'value_options' => [
+                        '' => 'Default',
+                        'common/block-layout/openseadragon' => 'Full width',
+                        'common/block-layout/openseadragon-image-alongside-text' => 'Image alongside text',
+                    ],
+                ],
+            ])
+            ->add([
                 'name' => 'o:block[__blockIndex__][o:data][tilesource]',
                 'type' => Element\Url::class,
                 'options' => [

@@ -19,4 +19,16 @@ class Module extends AbstractModule
             ]
         );
     }
+    public function getServiceConfig()
+    {
+    return [
+        'factories' => [
+            \PageBlockOpenseadragon\Form\OpenseadragonFieldset::class => function ($formElementManager) {
+                $fieldset = new \PageBlockOpenseadragon\Form\OpenseadragonFieldset();
+                $fieldset->setName('openseadragon');
+                return $fieldset;
+            },
+        ],
+    ];
+}
 }
