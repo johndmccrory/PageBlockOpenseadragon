@@ -44,7 +44,7 @@ $blockId = 'viewer-' . $block->id();
             <div class="sr-only" id="image-description"><?= $this->escapeHtml($alttext) ?></div>
         </div>
         <?php if (!empty($subtitle)): ?>
-            <div class="dark-background large-padding-horizontal-1 xlarge-padding-horizontal-2">
+            <div class="large-padding-horizontal-1 xlarge-padding-horizontal-2 dark-background">
                 <div class="caption asset-caption">
                     <p><?= $this->escapeHtml($subtitle) ?></p>
                 </div>
@@ -53,14 +53,14 @@ $blockId = 'viewer-' . $block->id();
     </div>
 
     <!-- Text Element -->
-    <div class="small-12 large-5 xlarge-4 dark-background flex-container flex-dir-column align-middle align-center padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
+    <div class="small-12 large-5 xlarge-4 flex-container flex-dir-column align-middle align-center padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
         <?php if (!empty($title)): ?>
-            <div class="hero-title-openseadragon padding-1">
+            <div class="hero-title-openseadragon padding-horizontal-1 large-padding-1">
                 <h1><?= $this->escapeHtml($title) ?></h1>
             </div>
         <?php endif; ?>
         <?php if (!empty($text)): ?>
-            <div class="dark-background medium-padding-horizontal-1 xlarge-padding-horizontal-2">
+            <div class="medium-padding-horizontal-1 xlarge-padding-horizontal-2">
                 <div class="hero-text-openseadragon">
                     <p><?= $this->escapeHtml($text) ?></p>
                 </div>
