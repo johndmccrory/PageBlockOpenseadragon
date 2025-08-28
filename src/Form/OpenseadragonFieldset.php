@@ -37,6 +37,19 @@ class OpenseadragonFieldset extends Fieldset
                 ],
             ])
             ->add([
+                'name' => 'o:block[__blockIndex__][o:data][subtitle]',
+                'type' => Element\Text::class,
+                'options' => [
+                    'label' => 'Image subtitle', // @translate
+                    'info' => 'The subtitle (if any) to be displayed under the main image.', // @translate
+                ],
+                'attributes' => [
+                    'id' => 'subtitle',
+                    'size' => 10,
+                    'maxlength' => 100,
+                ],
+            ])
+            ->add([
                 'name' => 'o:block[__blockIndex__][o:data][title]',
                 'type' => Element\Text::class,
                 'options' => [
@@ -45,19 +58,6 @@ class OpenseadragonFieldset extends Fieldset
                 ],
                 'attributes' => [
                     'id' => 'title',
-                    'size' => 10,
-                    'maxlength' => 100,
-                ],
-            ])
-            ->add([
-                'name' => 'o:block[__blockIndex__][o:data][subtitle]',
-                'type' => Element\Text::class,
-                'options' => [
-                    'label' => 'Subtitle', // @translate
-                    'info' => 'The subtitle (if any) to be displayed under the main image.', // @translate
-                ],
-                'attributes' => [
-                    'id' => 'subtitle',
                     'size' => 10,
                     'maxlength' => 100,
                 ],
@@ -72,7 +72,7 @@ class OpenseadragonFieldset extends Fieldset
                 'attributes' => [
                     'id' => 'text',
                     'size' => 10,
-                    'maxlength' => 400,
+                    'maxlength' => 600,
                 ],
             ])
             ->add([

@@ -65,6 +65,9 @@
 .openseadragon-block {
     height: 500px;
 }
+.openseadragon-block-text-image .openseadragon-block {
+    height: 700px;
+    }
 .large-padding-horizontal-1 {
     padding: 0 1rem;
 }
