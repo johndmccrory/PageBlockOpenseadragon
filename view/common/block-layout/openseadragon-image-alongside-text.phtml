@@ -25,12 +25,12 @@ $alttext = $data['alttext'] ?? '';
 $blockId = 'viewer-' . $block->id();
 ?>
 
-<div class="grid-x grid-padding-x full-width no-padding-top flex-container flex-dir-column large-flex-dir-row">
+<div class="openseadragon-block-text-image grid-x grid-padding-x full-width no-padding-top flex-container flex-dir-column large-flex-dir-row no-margin-top">
     <!-- Image Element --> 
     <div class="small-12 large-7 xlarge-8">
         <div
             id="<?= $blockId ?>"
-            class="openseadragon-block openseadragon-text-image"
+            class="openseadragon-block"
             aria-labelledby="image-description"
             data-tilesource="<?= $this->escapeHtmlAttr($tilesource) ?>"
             data-zoom1="<?= $this->escapeHtmlAttr($zoom1) ?>"
@@ -55,13 +55,13 @@ $blockId = 'viewer-' . $block->id();
     <!-- Text Element -->
     <div class="small-12 large-5 xlarge-4 flex-container flex-dir-column align-middle align-center padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
         <?php if (!empty($title)): ?>
-            <div class="hero-title-openseadragon padding-horizontal-1 large-padding-1">
+            <div class="padding-horizontal-1 large-padding-1">
                 <h1><?= $this->escapeHtml($title) ?></h1>
             </div>
         <?php endif; ?>
         <?php if (!empty($text)): ?>
             <div class="medium-padding-horizontal-1 xlarge-padding-horizontal-2">
-                <div class="hero-text-openseadragon">
+                <div>
                     <p><?= $this->escapeHtml($text) ?></p>
                 </div>
             </div>
