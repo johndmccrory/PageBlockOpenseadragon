@@ -63,6 +63,19 @@ class OpenseadragonFieldset extends Fieldset
                 ],
             ])
             ->add([
+                'name' => 'o:block[__blockIndex__][o:data][text]',
+                'type' => Element\Textarea::class,
+                'options' => [
+                    'label' => 'Text', // @translate
+                    'info' => 'The text to be displayed alongside the main image. This element is only displayed when using the "Image alongside text" template', // @translate
+                ],
+                'attributes' => [
+                    'id' => 'text',
+                    'size' => 10,
+                    'maxlength' => 400,
+                ],
+            ])
+            ->add([
                 'name' => 'o:block[__blockIndex__][o:data][zoom1]',
                 'type' => Element\Text::class,
                 'options' => [
