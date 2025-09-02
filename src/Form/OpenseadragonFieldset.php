@@ -32,8 +32,10 @@ class OpenseadragonFieldset extends Fieldset
                 ],
                 'attributes' => [
                     'id' => 'tilesource',
-                    'pattern' => 'https?://.+',
+                    'required' => true,
+                    'pattern' => 'https?://.+/info\.json$',
                     'placeholder' => "https://luna.manchester.ac.uk/luna/servlet/iiif/Manchester~91~1~448202~299584/info.json",
+                     'title' => 'The URL must be a valid IIIF endpoint and end with "/info.json".',
                 ],
             ])
             ->add([
