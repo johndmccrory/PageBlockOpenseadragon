@@ -14,7 +14,7 @@ class Openseadragon extends AbstractBlockLayout
 {
     public function getLabel()
     {
-        return 'Openseadragon hero'; // @translate
+        return 'Openseadragon block'; // @translate
     }
 
     public function form(
