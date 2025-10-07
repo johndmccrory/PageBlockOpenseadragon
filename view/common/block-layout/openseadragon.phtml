@@ -16,6 +16,7 @@ $positionx = (float) ($data['positionx'] ?? 0);
 $positiony = (float) ($data['positiony'] ?? 0);
 $title = $data['title'] ?? '';
 $subtitle = $data['subtitle'] ?? '';
+$text = $data['text'] ?? '';
 $alttext = $data['alttext'] ?? '';
 ?>
 
@@ -26,7 +27,7 @@ $blockId = 'viewer-' . $block->id();
 
 <div
     id="<?= $blockId ?>"
-    class="openseadragon-block full-width"
+    class="openseadragon-block full-width no-margin-top"
     aria-labelledby="image-description"
     data-tilesource="<?= $this->escapeHtmlAttr($tilesource) ?>"
     data-zoom1="<?= $this->escapeHtmlAttr($zoom1) ?>"
@@ -56,4 +57,15 @@ $blockId = 'viewer-' . $block->id();
             </div>
         </div>
     <?php endif; ?>
+    <div class="full-width">
+        <div class="caption-intro-text grid-container padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
+            <?php if (!empty($text)): ?>
+                <div class="medium-padding-horizontal-1 xlarge-padding-horizontal-2">
+                    <div>
+                        <p><?= $this->escapeHtml($text) ?></p>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
 </div>
