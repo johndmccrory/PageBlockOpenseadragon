@@ -30,8 +30,10 @@ $blockId = 'viewer-' . $block->id();
     <div class="small-12 large-7 xlarge-8">
         <div
             id="<?= $blockId ?>"
+            role="img"
             class="openseadragon-block"
-            aria-labelledby="image-description"
+            aria-label="<?= $this->escapeHtmlAttr($title) ?>"
+            aria-describedby="desc-<?=$blockId ?>"
             data-tilesource="<?= $this->escapeHtmlAttr($tilesource) ?>"
             data-zoom1="<?= $this->escapeHtmlAttr($zoom1) ?>"
             data-zoom2="<?= $this->escapeHtmlAttr($zoom2) ?>"
@@ -40,8 +42,11 @@ $blockId = 'viewer-' . $block->id();
             data-positionx="<?= $this->escapeHtmlAttr($positionx) ?>"
             data-positiony="<?= $this->escapeHtmlAttr($positiony) ?>"
         >
+
             <!-- Hidden descriptive text for screen readers -->
-            <div class="sr-only" id="image-description"><?= $this->escapeHtml($alttext) ?></div>
+            <div id="desc-<?=$blockId ?>" class="sr-only">
+                <?= $this->escapeHtmlAttr($alttext) ?>
+            </div>
         </div>
         <?php if (!empty($subtitle)): ?>
             <div class="large-padding-horizontal-1 xlarge-padding-horizontal-2 dark-background">

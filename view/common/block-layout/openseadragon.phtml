@@ -27,8 +27,10 @@ $blockId = 'viewer-' . $block->id();
 
 <div
     id="<?= $blockId ?>"
+    role="img"
     class="openseadragon-block full-width no-margin-top"
-    aria-labelledby="image-description"
+    aria-label="<?= $this->escapeHtmlAttr($title) ?>"
+    aria-describedby="desc-<?=$blockId ?>"
     data-tilesource="<?= $this->escapeHtmlAttr($tilesource) ?>"
     data-zoom1="<?= $this->escapeHtmlAttr($zoom1) ?>"
     data-zoom2="<?= $this->escapeHtmlAttr($zoom2) ?>"
@@ -39,7 +41,9 @@ $blockId = 'viewer-' . $block->id();
 >
 
     <!-- Hidden descriptive text for screen readers -->
-    <div class="sr-only" id="image-description"><?= $this->escapeHtml($alttext) ?></div>
+    <div id="desc-<?=$blockId ?>" class="sr-only">
+        <?= $this->escapeHtmlAttr($alttext) ?>
+    </div>
 
     <?php if (!empty($title)): ?>
         <div class="grid-container">

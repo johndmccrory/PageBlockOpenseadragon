@@ -69,7 +69,7 @@ class OpenseadragonFieldset extends Fieldset
                 'type' => Element\Textarea::class,
                 'options' => [
                     'label' => 'Text', // @translate
-                    'info' => 'The text to be displayed alongside the main image. This element is only displayed when using the "Image alongside text" template', // @translate
+                    'info' => 'The text to be displayed alongside the main image.', // @translate
                 ],
                 'attributes' => [
                     'id' => 'text',
