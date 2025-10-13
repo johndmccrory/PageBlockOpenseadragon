@@ -11,6 +11,19 @@ class OpenseadragonFieldset extends Fieldset
     {
         $this
             ->add([
+                'name' => 'o:block[__blockIndex__][o:data][template]',
+                'type' => Element\Select::class,
+                'options' => [
+                    'label' => 'Template', // @translate
+                    'info' => 'Choose between a full-width image (default) and image alongside title/text.', // @translate
+                    'value_options' => [
+                        '' => 'Default',
+                        'common/block-layout/openseadragon' => 'Full width',
+                        'common/block-layout/openseadragon-image-alongside-text' => 'Image alongside text',
+                    ],
+                ],
+            ])
+            ->add([
                 'name' => 'o:block[__blockIndex__][o:data][tilesource]',
                 'type' => Element\Url::class,
                 'options' => [
@@ -19,8 +32,23 @@ class OpenseadragonFieldset extends Fieldset
                 ],
                 'attributes' => [
                     'id' => 'tilesource',
-                    'pattern' => 'https?://.+',
+                    'required' => true,
+                    'pattern' => 'https?://.+/info\.json$',
                     'placeholder' => "https://luna.manchester.ac.uk/luna/servlet/iiif/Manchester~91~1~448202~299584/info.json",
+                     'title' => 'The URL must be a valid IIIF endpoint and end with "/info.json".',
+                ],
+            ])
+            ->add([
+                'name' => 'o:block[__blockIndex__][o:data][subtitle]',
+                'type' => Element\Text::class,
+                'options' => [
+                    'label' => 'Image subtitle', // @translate
+                    'info' => 'The subtitle (if any) to be displayed under the main image.', // @translate
+                ],
+                'attributes' => [
+                    'id' => 'subtitle',
+                    'size' => 10,
+                    'maxlength' => 100,
                 ],
             ])
             ->add([
@@ -37,16 +65,16 @@ class OpenseadragonFieldset extends Fieldset
                 ],
             ])
             ->add([
-                'name' => 'o:block[__blockIndex__][o:data][subtitle]',
-                'type' => Element\Text::class,
+                'name' => 'o:block[__blockIndex__][o:data][text]',
+                'type' => Element\Textarea::class,
                 'options' => [
-                    'label' => 'Subtitle', // @translate
-                    'info' => 'The subtitle (if any) to be displayed under the main image.', // @translate
+                    'label' => 'Text', // @translate
+                    'info' => 'The text to be displayed alongside the main image.', // @translate
                 ],
                 'attributes' => [
-                    'id' => 'subtitle',
+                    'id' => 'text',
                     'size' => 10,
-                    'maxlength' => 100,
+                    'maxlength' => 600,
                 ],
             ])
             ->add([

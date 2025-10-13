@@ -14,7 +14,7 @@ class Openseadragon extends AbstractBlockLayout
 {
     public function getLabel()
     {
-        return 'Openseadragon hero'; // @translate
+        return 'Openseadragon block'; // @translate
     }
 
     public function form(
@@ -42,12 +42,18 @@ class Openseadragon extends AbstractBlockLayout
         return $view->formCollection($fieldset);
     }
 
-    public function render(PhpRenderer $view, SitePageBlockRepresentation $block)
+    public function render(PhpRenderer $view, SitePageBlockRepresentation $block, $templateViewScript = null)
     {
-        return $view->partial('common/block-layout/openseadragon', [
+        // Use the admin-selected block template if present,
+        // else fall back to block’s own saved data,
+        // else fall back to the module’s default.
+        $template = $templateViewScript
+            ?: $block->dataValue('template')
+            ?: 'common/block-layout/openseadragon';
+
+        return $view->partial($template, [
             'data' => $block->data(),
             'block' => $block,
         ]);
     }
-
 }
