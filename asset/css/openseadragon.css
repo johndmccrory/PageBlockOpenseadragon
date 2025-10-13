@@ -54,6 +54,18 @@
     border-left: solid 6px #D3D3D3;
 }
 
+/*Screen reader only text*/ 
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
 @media screen and (min-width: 600px) {
 .openseadragon-block .hero-title-openseadragon h1 {
     font-size: 200%;
