@@ -61,15 +61,15 @@ $blockId = 'viewer-' . $block->id();
             </div>
         </div>
     <?php endif; ?>
-    <div class="full-width">
-        <div class="caption-intro-text grid-container padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
-            <?php if (!empty($text)): ?>
+    <?php if (!empty($text)): ?>
+        <div class="full-width">
+            <div class="caption-intro-text grid-container padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
                 <div class="medium-padding-horizontal-1 xlarge-padding-horizontal-2">
                     <div>
                         <p><?= $this->escapeHtml($text) ?></p>
                     </div>
                 </div>
-            <?php endif; ?>
+            </div>        
         </div>
-    </div>
+    <?php endif; ?>
 </div>
