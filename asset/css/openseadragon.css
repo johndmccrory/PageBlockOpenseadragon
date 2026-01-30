@@ -52,6 +52,12 @@
     line-height: 2.75rem;
 }
 
+/* Allow vertical page scrolling when touching the viewer */
+.openseadragon-block,
+.openseadragon-block .openseadragon-canvas {
+  touch-action: pan-y;
+}
+
 .dark-background {
     background-color: #1d1d1d;
     color: #fefefe;

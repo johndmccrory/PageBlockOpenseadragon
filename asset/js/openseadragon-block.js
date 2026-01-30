@@ -32,12 +32,21 @@ document.addEventListener('DOMContentLoaded', function () {
       showNavigationControl: false,
 
       // Keep your “no interaction” intent
-      gestureSettingsMouse: {
+        gestureSettingsMouse: {
         clickToZoom: false,
         dblClickToZoom: false,
         pinchToZoom: false,
         wheelToZoom: false
       },
+
+      // Phones/tablets
+      gestureSettingsTouch: {
+      dragToPan: false,
+      pinchToZoom: false,
+      flickEnabled: false,
+      dblClickToZoom: false,
+      clickToZoom: false
+    },
 
       // Animation tuning (these matter)
       animationTime: reduceMotion ? 0 : 100,   // seconds for zoom/pan springs to settle
@@ -85,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // Your initial framing (no animation here, so it loads predictably)
       viewer.viewport.zoomTo(calculateResponsiveZoom(), new OpenSeadragon.Point(0.5, 0.5), true);
       viewer.viewport.panTo(new OpenSeadragon.Point(initialPosition.x, initialPosition.y), true);
-
       viewer.setMouseNavEnabled(false);
 
       // Then run the animation
