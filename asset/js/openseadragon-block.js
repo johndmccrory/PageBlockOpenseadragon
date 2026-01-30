@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const blocks = document.querySelectorAll('.openseadragon-block');
+  const ANIMATION_DELAY_MS = 2000; // Delay for 1 second
 
   // Respect reduced motion
   const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
       // Animation tuning (these matter)
-      animationTime: reduceMotion ? 0 : 100,   // seconds for zoom/pan springs to settle
+      animationTime: reduceMotion ? 0 : 150,   // seconds for zoom/pan springs to settle
       blendTime: reduceMotion ? 0 : 0.1,       // crossfade between tiles as you zoom
       springStiffness: 5.5,                    // higher = snappier, lower = floatier
       minZoomImageRatio: 0.9,
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tourTimeout = setTimeout(() => {
         viewer.viewport.zoomTo(end.zoom, new OpenSeadragon.Point(0.5, 0.5), false);
         viewer.viewport.panTo(new OpenSeadragon.Point(end.x, end.y), false);
-      }, 150);
+      }, ANIMATION_DELAY_MS);
 
       // If you want it to “breathe” back and forth (loop), add a return leg:
       // tourTimeout = setTimeout(() => {
