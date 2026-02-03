@@ -32,9 +32,17 @@
     margin-right: auto;
 }
 
+/*Set the hero height*/ 
 .openseadragon-block {
     height: 400px;
 }
+
+/* Allow vertical page scrolling when touching the viewer */
+.openseadragon-block,
+.openseadragon-block .openseadragon-canvas {
+  touch-action: pan-y;
+}
+
 
 .openseadragon-block .hero-title-openseadragon {
     position: absolute;
@@ -74,6 +82,9 @@
 }
 
 @media screen and (min-width: 600px) {
+.openseadragon-block {
+    height: clamp(24rem, 60svh, 44rem);
+}
 .openseadragon-block .hero-title-openseadragon h1 {
     font-size: 200%;
     line-height: 3rem;
@@ -82,7 +93,7 @@
 
 @media screen and (min-width: 900px) {
 .openseadragon-block {
-    height: 500px;
+    height: clamp(24rem, 70svh, 44rem);
 }
 .openseadragon-block-text-image .openseadragon-block {
     height: 700px;
@@ -100,9 +111,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-.openseadragon-block {
-    height: 550px;
-}
 .xlarge-padding-horizontal-2 {
     padding: 0 2rem;
 }
