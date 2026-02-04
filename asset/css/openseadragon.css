@@ -37,12 +37,17 @@
     height: 400px;
 }
 
-/* Allow vertical page scrolling when touching the viewer */
-.openseadragon-block,
+/* Allow vertical page scrolling when swiping on the OSD viewer */
+.openseadragon-block .openseadragon-container,
 .openseadragon-block .openseadragon-canvas {
-  touch-action: pan-y;
+  touch-action: pan-y !important;
 }
 
+/* Most reliable: stop OSD wrappers receiving touch/pointer events */
+.openseadragon-block .openseadragon-container,
+.openseadragon-block .openseadragon-canvas {
+  pointer-events: none !important;
+}
 
 .openseadragon-block .hero-title-openseadragon {
     position: absolute;
