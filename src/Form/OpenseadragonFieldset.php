@@ -20,6 +20,7 @@ class OpenseadragonFieldset extends Fieldset
                         '' => 'Default',
                         'common/block-layout/openseadragon' => 'Full width',
                         'common/block-layout/openseadragon-image-alongside-text' => 'Image alongside text',
+                        'common/block-layout/openseadragon-image-alongside-text-transparent' => 'Image alongside text with a transparent background',
                     ],
                 ],
             ])

@@ -1,0 +1,75 @@
+<?php
+$this->headScript()->appendFile($this->assetUrl('js/openseadragon-block.js', 'PageBlockOpenseadragon'));
+$this->headScript()->appendFile($this->assetUrl('vendor/openseadragon/openseadragon.min.js', 'Omeka'));
+$this->headLink()->appendStylesheet($this->assetUrl('css/openseadragon.css', 'PageBlockOpenseadragon'));
+?>
+
+<?php
+// Get the data passed in from render()
+$selector1 = $data['selector1'] ?? '';
+$tilesource = $data['tilesource'] ?? '';
+$zoom1 = (float) ($data['zoom1'] ?? 1);
+$zoom2 = (float) ($data['zoom2'] ?? 1);
+$zoom3 = (float) ($data['zoom3'] ?? 1);
+$zoom4 = (float) ($data['zoom4'] ?? 1);
+$positionx = (float) ($data['positionx'] ?? 0);
+$positiony = (float) ($data['positiony'] ?? 0);
+$title = $data['title'] ?? '';
+$subtitle = $data['subtitle'] ?? '';
+$text = $data['text'] ?? '';
+$alttext = $data['alttext'] ?? '';
+?>
+
+<?php
+// Generate a unique ID for each block instance
+$blockId = 'viewer-' . $block->id();
+?>
+
+<div
+    id="<?= $blockId ?>"
+    role="img"
+    class="openseadragon-block full-width no-margin-top"
+    aria-label="<?= $this->escapeHtmlAttr($title) ?>"
+    aria-describedby="desc-<?=$blockId ?>"
+    data-tilesource="<?= $this->escapeHtmlAttr($tilesource) ?>"
+    data-zoom1="<?= $this->escapeHtmlAttr($zoom1) ?>"
+    data-zoom2="<?= $this->escapeHtmlAttr($zoom2) ?>"
+    data-zoom3="<?= $this->escapeHtmlAttr($zoom3) ?>"
+    data-zoom4="<?= $this->escapeHtmlAttr($zoom4) ?>"
+    data-positionx="<?= $this->escapeHtmlAttr($positionx) ?>"
+    data-positiony="<?= $this->escapeHtmlAttr($positiony) ?>"
+>
+
+    <!-- Hidden descriptive text for screen readers -->
+    <div id="desc-<?=$blockId ?>" class="sr-only">
+        <?= $this->escapeHtmlAttr($alttext) ?>
+    </div>
+
+    <?php if (!empty($title)): ?>
+        <div class="hero-title-openseadragon-transparent flex-container">
+            <div class="hero-title-openseadragon flex-container">
+                <h1 class="flex-container align-middle"><?= $this->escapeHtml($title) ?></h1>
+            </div>
+        </div>
+    <?php endif; ?>
+    </div>
+
+    <?php if (!empty($subtitle)): ?>
+        <div class="full-width dark-background large-padding-horizontal-1 xlarge-padding-horizontal-2">
+            <div class="caption asset-caption">
+                <p><?= $this->escapeHtml($subtitle) ?></p>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty($text)): ?>
+        <div class="full-width">
+            <div class="caption-intro-text grid-container padding-vertical-1 large-padding-vertical-2 xlarge-padding-vertical-3">
+                <div class="medium-padding-horizontal-1 xlarge-padding-horizontal-2">
+                    <div>
+                        <p><?= $this->escapeHtml($text) ?></p>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    <?php endif; ?>
+</div>
