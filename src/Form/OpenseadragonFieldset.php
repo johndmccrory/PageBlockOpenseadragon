@@ -29,14 +29,14 @@ class OpenseadragonFieldset extends Fieldset
                 'type' => Element\Url::class,
                 'options' => [
                     'label' => 'IIIF Image location', // @translate
-                    'info' => 'Paste a IIIF image location here, ensuring this address ends with /info.json', // @translate
+                    'info' => 'Paste a IIIF image location here. If the IIIF image does not end with /info.json then please add it.', // @translate
                 ],
                 'attributes' => [
                     'id' => 'tilesource',
                     'required' => true,
                     'pattern' => 'https?://.+/info\.json$',
                     'placeholder' => "https://luna.manchester.ac.uk/luna/servlet/iiif/Manchester~91~1~448202~299584/info.json",
-                     'title' => 'The URL must be a valid IIIF endpoint and end with "/info.json".',
+                     'title' => 'The URL must be a valid IIIF endpoint. If your endpoint does not end with "/info.json", please add it manually.',
                 ],
             ])
             ->add([
